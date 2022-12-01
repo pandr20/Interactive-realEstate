@@ -1,18 +1,19 @@
 import Link from 'next/link';
 import Image from 'next/image';
 import { Flex, Box, Text, Button } from '@chakra-ui/react';
+import logointeractive from "../assets/images/logointeractive.png";
 
 import Property from '../components/Property';
 import { baseUrl, fetchApi } from '../utils/fetchApi';
 
 export const Banner = ({ purpose, title1, title2, desc1, desc2, buttonText, linkName, imageUrl }) => (
   <Flex flexWrap='wrap' justifyContent='center' alignItems='center' m='10'>
-    <Image src={imageUrl} width={500} height={300} />
+    <Image src={logointeractive} width={500} height={300} />
     <Box p='5'>
       <Text color='gray.500' fontSize='sm' fontWeight='medium'>{purpose}</Text>
       <Text fontSize='3xl' fontWeight='bold'>{title1}<br />{title2}</Text>
       <Text fontSize='lg' paddingTop='3' paddingBottom='3' color='gray.700'>{desc1}<br />{desc2}</Text>
-      <Button fontSize='xl' bg="blue.300" color="white">
+      <Button fontSize='xl' bg="blue.400" color="white">
         <Link href={linkName}><a>{buttonText}</a></Link>
       </Button>
     </Box>
@@ -26,11 +27,11 @@ const Home = ({ propertiesForSale, propertiesForRent }) => (
       purpose='RENT A HOME'
       title1='Rental Homes for'
       title2='Everyone'
-      desc1=' Explore from apartments, buildings, villas'
+      desc1=' Explore apartments, buildings, villas'
       desc2='and more'
       buttonText='Explore Renting'
       linkName='/search?purpose=for-rent'
-      imageUrl='https://bayut-production.s3.eu-central-1.amazonaws.com/image/145426814/33973352624c48628e41f2ec460faba4'
+      imageUrl='https://pngtree.com/freepng/real-estate-logo_4103471.html'
     />
     <Flex flexWrap='wrap'>
       {propertiesForRent.map((property) => <Property property={property} key={property.id} />)}
@@ -39,7 +40,7 @@ const Home = ({ propertiesForSale, propertiesForRent }) => (
       purpose='BUY A HOME'
       title1=' Find, Buy & Own Your'
       title2='Dream Home'
-      desc1=' Explore from apartments, land, buildings,'
+      desc1=' Explore apartments, land, buildings,'
       desc2=' villas and more'
       buttonText='Explore Buying'
       linkName='/search?purpose=for-sale'
