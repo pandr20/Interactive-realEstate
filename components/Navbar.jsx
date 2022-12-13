@@ -23,7 +23,7 @@ const Navbar = () => (
           <Link href='/' passHref>
             <MenuItem icon={<FcHome />}>Home</MenuItem>
           </Link>
-          <Link href='/search?purpose=for-sale' passHref>
+          <Link id="search" href='/search?purpose=for-sale' passHref>
             <MenuItem icon={<FcAbout />}>Buy Property</MenuItem>
           </Link>
           <Link href='/search?purpose=for-rent' passHref>
